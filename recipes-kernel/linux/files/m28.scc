@@ -1,5 +1,0 @@
-kconf hardware m28.cfg
-include features/usb-net/usb-net.scc
-
-kconf hardware m28-user-config.cfg
-include m28-user-patches.scc
