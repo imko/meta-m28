@@ -1,0 +1,7 @@
+define KMACHINE m28
+define KTYPE tiny
+define KARCH arm
+
+include ktypes/tiny/tiny.scc
+
+include m28.scc

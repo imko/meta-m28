@@ -1,0 +1,7 @@
+define KMACHINE m28
+define KTYPE standard
+define KARCH arm
+
+include ktypes/standard/standard.scc
+
+include m28.scc
