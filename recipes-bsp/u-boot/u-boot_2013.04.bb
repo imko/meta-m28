@@ -11,14 +11,15 @@ DEFAULT_PREFERENCE = "-1"
 # UBOOT_MACHINE = "m28evk_config"
 # UBOOT_ENTRYPOINT = "0x42000000"
 # UBOOT_LOADADDRESS = "0x42000000"
+# UBOOT_MAKE_TARGET = "u-boot.sb"
 
 LICENSE = "GPLv2+"
 LIC_FILES_CHKSUM = "file://COPYING;md5=1707d6db1d42237583f50183a5651ecb"
 
-#DEPENDS += "elftosb-native"
+DEPENDS += "elftosb-native mxsldr-native"
 
 PV = "v2013.04+git${SRCPV}"
-PR = "r0"
+PR = "r1"
 
 SRC_URI = "git://git.denx.de/u-boot.git;branch=master;protocol=git"
 # This revision corresponds to the tag "v2013.04"
