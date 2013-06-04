@@ -7,8 +7,6 @@ PROVIDES += "virtual/kernel"
 inherit kernel
 require recipes-kernel/linux/linux-dtb.inc
 
-FILESPATH = "${FILE_DIRNAME}/${PN}_3.9/"
-
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-3.9.y \
            file://defconfig"
 
@@ -20,5 +18,7 @@ LINUX_VERSION_EXTENSION = "-mainline"
 
 PR = "r1"
 PV = "${LINUX_VERSION}+git${SRCPV}"
+
+S = "${WORKDIR}/git"
 
 COMPATIBLE_MACHINE = "(m28|m28evk)"
