@@ -1,0 +1,35 @@
+From 70eb4123e2708c180aef4b9256b22897d3f49d32 Mon Sep 17 00:00:00 2001
+From: Markus Hubig <mhubig@imko.de>
+Date: Wed, 5 Jun 2013 10:34:40 +0200
+Subject: [PATCH 2/2] Adds an install target to the makefile.
+
+Signed-off-by: Markus Hubig <mhubig@imko.de>
+---
+ Makefile | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/Makefile b/Makefile
+index 455e129..5e0c011 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,8 +1,17 @@
++DESTDIR ?=
++prefix ?= "/usr/local"
++
++all: mxssb
++
+ CFLAGS=`pkg-config --cflags libcrypto` -Wall
+ LDFLAGS=`pkg-config --libs libcrypto`
+ 
+ mxssb:	mxssb.c
+ 	$(CC) -o$@ $< $(CFLAGS) $(LDFLAGS)
+ 
++install: mxssb
++	mkdir -p $(DESTDIR)/$(prefix)/bin
++	install -m 755 $^ $(DESTDIR)/$(prefix)/bin
++
+ clean:
+ 	rm -f mxssb
+-- 
+1.8.1.2
+

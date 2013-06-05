@@ -1,0 +1,26 @@
+From be30e5c9a9d6c1175632e3f80550d5eb6fef1be4 Mon Sep 17 00:00:00 2001
+From: Markus Hubig <mhubig@imko.de>
+Date: Wed, 5 Jun 2013 10:24:42 +0200
+Subject: [PATCH 1/2] Fixes the command ordering of the compiler command.
+
+Signed-off-by: Markus Hubig <mhubig@imko.de>
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 9bd5cac..455e129 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@ CFLAGS=`pkg-config --cflags libcrypto` -Wall
+ LDFLAGS=`pkg-config --libs libcrypto`
+ 
+ mxssb:	mxssb.c
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
++	$(CC) -o$@ $< $(CFLAGS) $(LDFLAGS)
+ 
+ clean:
+ 	rm -f mxssb
+-- 
+1.8.1.2
+
