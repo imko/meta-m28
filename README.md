@@ -1,4 +1,4 @@
-# Openembedded BSP Layer for the Denx M28
+## Denx M28 SOC BSP-Layer for the YoctoProject
 
     Version: 0.1.0
 
@@ -8,7 +8,7 @@ Kernel and RootFS for the M28 SOC from Denx.
 
 Maintainer: Markus Hubig <mhubig@imko.de>
 
-## Dependencies
+### Dependencies
 
 This layer depends on:
 
@@ -16,7 +16,7 @@ This layer depends on:
     layers: meta, meta-yocto
     branch: dylan
 
-## Usage instructions
+### Usage instructions
 
 In order to build an image with support for the M28 SOC you simply need
 to make the build system aware of this BSP-Layer by adding it to your
