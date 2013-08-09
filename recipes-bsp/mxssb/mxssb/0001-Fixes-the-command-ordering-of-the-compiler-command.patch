@@ -1,0 +1,31 @@
+From be30e5c9a9d6c1175632e3f80550d5eb6fef1be4 Mon Sep 17 00:00:00 2001
+From: Markus Hubig <mhubig@imko.de>
+Date: Wed, 5 Jun 2013 10:24:42 +0200
+Subject: [PATCH] Fix the ordering of the compiler command
+
+According to http://webpages.charter.net/ppluzhnikov/linker.html , the
+order of the libraries linked with the resulting executable on the linker
+command line does matter and can cause linker to be unable to resolve
+symbols if incorrect.
+
+Signed-off-by: Markus Hubig <mhubig@imko.de>
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 9bd5cac..455e129 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@ CFLAGS=`pkg-config --cflags libcrypto` -Wall
+ LDFLAGS=`pkg-config --libs libcrypto`
+ 
+ mxssb:	mxssb.c
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
++	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
+ 
+ clean:
+ 	rm -f mxssb
+-- 
+1.8.1.2
+

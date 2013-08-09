@@ -1,7 +1,0 @@
-define KMACHINE m28
-define KTYPE preempt-rt
-define KARCH arm
-
-include ktypes/preempt-rt/preempt-rt.scc
-
-include m28.scc

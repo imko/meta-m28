@@ -1,0 +1,40 @@
+From e31b75406a660cb7cce1feaf12e86abf0364ab12 Mon Sep 17 00:00:00 2001
+From: Markus Hubig <mhubig@imko.de>
+Date: Tue, 14 May 2013 11:18:37 +0200
+Subject: [PATCH 1/4] Don't use full path for headers.
+
+Signed-off-by: Markus Hubig <mhubig@imko.de>
+---
+ common/stdafx.h | 2 +-
+ stdafx.h        | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/common/stdafx.h b/common/stdafx.h
+index e6bf9dd..fb3c2d7 100644
+--- a/common/stdafx.h
++++ b/common/stdafx.h
+@@ -27,7 +27,7 @@
+ // For Linux systems only, types.h only defines the signed
+ // integer types.  This is not professional code.
+ // Update: They are defined in the header files in the more recent version of redhat enterprise gcc.
+-#include "/usr/include/sys/types.h"
++#include <sys/types.h>
+ #include <stdint.h>
+ //typedef unsigned long uint32_t;
+ //typedef unsigned short uint16_t;
+diff --git a/stdafx.h b/stdafx.h
+index ce80458..6ff2f44 100644
+--- a/stdafx.h
++++ b/stdafx.h
+@@ -27,7 +27,7 @@
+ // For Linux systems only, types.h only defines the signed
+ // integer types.  This is not professional code.
+ // Update: They are defined in the header files in the more recent version of redhat enterprise gcc.
+-#include "/usr/include/sys/types.h"
++#include <sys/types.h>
+ //typedef unsigned long uint32_t;
+ //typedef unsigned short uint16_t;
+ //typedef unsigned char uint8_t;
+-- 
+1.8.1.2
+
